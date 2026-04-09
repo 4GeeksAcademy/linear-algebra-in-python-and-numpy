@@ -6,16 +6,16 @@ from app import solve_system
 
 @pytest.mark.it("Correctly solves a linear system in 'pure' mode")
 def test_solve_system_pure():
-    A = [[2, 3], [4, -1]]
-    b = [5, 1]
+    A = [[1, 1], [3, -1]]                                                                                                                                                       
+    b = [1, 7]                                                                                                                                                                  
     expected = [2, -1]
     result = solve_system(A, b, "pure")
     assert result == expected, f"Expected {expected}, but got {result}"
 
 @pytest.mark.it("Correctly solves a linear system in 'numpy' mode")
 def test_solve_system_numpy():
-    A = [[2, 3], [4, -1]]
-    b = [5, 1]
+    A = [[1, 1], [3, -1]]
+    b = [1, 7]
     expected = np.array([2, -1])
     result = solve_system(A, b, "numpy")
     assert np.allclose(result, expected), f"Expected {expected}, but got {result}"
