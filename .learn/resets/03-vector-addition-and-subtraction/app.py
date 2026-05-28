@@ -17,13 +17,8 @@ def sum_vectors(v1, v2, mode="pure"):
     Returns:
     - A vector with the element-wise sum.
     """
-    if mode =="pure":
-        return [a + b for a,b in zip(v1,v2)]  # Element-wise sum for pure Python
-    elif mode=="numpy":
-        return np.add(v1,v2)  # Element-wise sum for NumPy arrays
-    else:
-        raise ValueError("Invalid mode. Use 'pure' or 'numpy'.")
  
+    pass  # Remove this line when implemented
 
 def subtract_vectors(v1, v2, mode="pure"):
     """
@@ -37,14 +32,8 @@ def subtract_vectors(v1, v2, mode="pure"):
     Returns:
     - A vector with the element-wise subtraction.
     """
-    if mode == "pure":
-        return [a - b for a, b in zip(v1, v2)]  # Element-wise subtraction for pure Python
-    elif mode == "numpy":
-        return np.subtract(v1, v2)  # Element-wise subtraction for NumPy arrays
-    else:
-        raise ValueError("Invalid mode. Use 'pure' or 'numpy'.")
 
-
+    pass  # Remove this line when implemented
 
 
 sum_result_pure = sum_vectors(vector1, vector2, "pure")

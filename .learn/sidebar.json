@@ -1,0 +1,29 @@
+{
+  "00-welcome": {
+    "us": "00-welcome"
+  },
+  "01-vector-representation": {
+    "us": "01-vector-representation"
+  },
+  "02-matrix-representation": {
+    "us": "02-matrix-representation"
+  },
+  "03-vector-addition-and-subtraction": {
+    "us": "03-vector-addition-and-subtraction"
+  },
+  "04-dot-product-and-matrix-product": {
+    "us": "04-dot-product-and-matrix-product"
+  },
+  "05-matrix-transposition": {
+    "us": "05-matrix-transposition"
+  },
+  "06-determinants-and-inverses": {
+    "us": "06-determinants-and-inverses"
+  },
+  "07-solving-systems-of-linear-equations": {
+    "us": "07-solving-systems-of-linear-equations"
+  },
+  "08-eigenvalues-and-eigenvectors": {
+    "us": "08-eigenvalues-and-eigenvectors"
+  }
+}

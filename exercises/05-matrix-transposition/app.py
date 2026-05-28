@@ -11,7 +11,25 @@ def transpose(matrix, mode="pure"):
     Returns:
     - The transposed matrix.
     """
-   
-    pass  # Remove this line when implemented
+    if mode == "pure":
+        return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]  # Transpose for pure Python lists
+    elif mode =="numpy":
+        return np.transpose(matrix)  # Transpose for NumPy arrays
+    else:
+        raise ValueError("Invalid mode. Use 'pure' or 'numpy'.")
+    
 
+# Example usage:
+if __name__ == "__main__":
+    # Using pure Python lists
+    matrix_list = [[1, 2, 3], [4, 5, 6]]
+    transposed_list = transpose(matrix_list, mode="pure")
+    print("Transposed (Pure Python):")
+    print(transposed_list)
+
+    # Using NumPy arrays
+    matrix_array = np.array([[1, 2, 3], [4, 5, 6]])
+    transposed_array = transpose(matrix_array, mode="numpy")
+    print("Transposed (NumPy):")
+    print(transposed_array)
 
