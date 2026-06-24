@@ -1,16 +1,24 @@
 import numpy as np  
 
 def compute_eigen(A, mode="numpy"):
-    """
-    Computes the eigenvalues and eigenvectors of a square matrix.
+    if len(A) != len(A[0]):
+        return "must be square"
+    
+    else:
+        if mode == 'pure':
+            a, b = A[0]
+            c, d = A[1]
 
-    Parameters:
-    - A: list of lists or np.array -> Square matrix.
-    - mode: str -> "pure" for manual calculation, "numpy" for np.linalg.eig().
+            lambda1 = ((a + d) + ((a + d)**2 - 4*(a*d - b*c))**0.5) / 2
+            lambda2 = ((a + d) - ((a + d)**2 - 4*(a*d - b*c))**0.5) / 2
 
-    Returns:
-    - List of eigenvalues (and eigenvectors if mode="numpy").
-    """
-   
-    pass  # Remove this line when implemented
+            return ([lambda1, lambda2], None)
 
+        else:
+            A = np.array(A)
+            return np.linalg.eig(A)
+
+
+A = [[3, 2], [1, 4]]
+print(compute_eigen(A, "pure"))
+print(compute_eigen(A, "numpy"))

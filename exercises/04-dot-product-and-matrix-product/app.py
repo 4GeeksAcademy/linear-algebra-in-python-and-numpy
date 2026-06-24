@@ -1,5 +1,6 @@
 import numpy as np
 
+
 # vectors and matrices
 vector1 = [1, 2, 3]
 vector2 = [4, 5, 6]
@@ -7,34 +8,45 @@ vector2 = [4, 5, 6]
 matrix1 = [[1, 2], [3, 4]]
 matrix2 = [[5, 6], [7, 8]]
 
+
 def dot_product(v1, v2, mode="pure"):
-    """
-    Computes the dot product of two vectors.
+    "Computes the dot product of two vectors."
 
-    Parameters:
-    - v1: list or np.array -> First vector.
-    - v2: list or np.array -> Second vector.
-    - mode: str -> "pure" for Python lists, "numpy" for NumPy arrays.
+    if len(v1) != len(v2):
+        return "vectors must have the same length"
+    
+    elif mode not in ['pure', 'numpy']:
+        return "Invalid mode"
+    
+    else:
+        if mode == 'pure':
+            return sum(v1[i] * v2[i] for i in range(len(v1)))
+        
+        else:
+            v1 = np.array(v1)
+            v2 = np.array(v2)
 
-    Returns:
-    - The dot product as a scalar value.
-    """
+            return np.dot(v1, v2)
 
-    pass  # Remove this line when implemented
 
 def matrix_product(A, B, mode="pure"):
-    """
-    Computes the product of two matrices.
+    "Computes the product of two matrices."
 
-    Parameters:
-    - A: list of lists or np.array -> First matrix.
-    - B: list of lists or np.array -> Second matrix.
-    - mode: str -> "pure" for Python lists, "numpy" for NumPy arrays.
+    if len(A[0]) != len(B):
+        return "incompatible matrix dimensions"
+    
+    elif mode not in ['pure', 'numpy']:
+        return "invalid mode"
+    
+    else:
+        if mode == 'pure':
+            return [[sum(A[i][k] * B[k][j] for k in range(len(A[0]))) for j in range(len(B[0]))] for i in range(len(A))]
+        
+        else:
+            A = np.array(A)
+            B = np.array(B)
 
-    Returns:
-    - A matrix with the result of A * B.
-    """
-    pass  # Remove this line when implemented
+            return np.dot(A, B)
 
 
 dot_result_pure = dot_product(vector1, vector2, "pure")

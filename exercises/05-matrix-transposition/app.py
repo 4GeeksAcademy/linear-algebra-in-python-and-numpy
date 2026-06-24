@@ -1,17 +1,23 @@
 import numpy as np  
 
+
+matrix = [[1, 2, 3], [4, 5, 6]]
+
+
 def transpose(matrix, mode="pure"):
-    """
-    Computes the transpose of a matrix.
+    "Transpose valid matrix."
 
-    Parameters:
-    - matrix: list of lists or np.array -> Matrix to transpose.
-    - mode: str -> "pure" for Python lists, "numpy" for NumPy arrays.
+    if len(matrix[0]) != len(matrix[1]):
+        return "invalid matrix"
+    
+    else:
+        if mode == 'pure':
+            return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+        
+        else:
+            matrix = np.array(matrix)
+            return matrix.T
+        
 
-    Returns:
-    - The transposed matrix.
-    """
-   
-    pass  # Remove this line when implemented
-
-
+print(transpose(matrix, "pure"))
+print(transpose(matrix, "numpy"))

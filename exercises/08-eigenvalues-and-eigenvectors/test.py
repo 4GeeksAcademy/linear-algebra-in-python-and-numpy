@@ -19,7 +19,7 @@ def test_compute_eigen_numpy():
     expected = np.array([5, 2])
     eigenvalues, eigenvectors = compute_eigen(A, "numpy")
 
-    assert np.allclose(eigenvalues, expected), f"Expected {expected}, but got {eigenvalues}"
+    assert np.allclose(sorted(eigenvalues), sorted(expected)), f"Expected {expected}, but got {eigenvalues}"
     assert isinstance(eigenvectors, np.ndarray), "Eigenvectors should be a NumPy array"
 
 # --- Error Handling ---

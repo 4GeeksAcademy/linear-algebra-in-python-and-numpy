@@ -6,34 +6,47 @@ vector1 = [1, 2, 3]
 vector2 = [4, 5, 6]
 
 def sum_vectors(v1, v2, mode="pure"):
-    """
-    Computes the element-wise sum of two vectors.
+    """Función para sumar vectores con mode='pure' para operar con python puro
+    o con mode='numpy' para operar con NumPy"""
 
-    Parameters:
-    - v1: list or np.array -> First vector.
-    - v2: list or np.array -> Second vector.
-    - mode: str -> "pure" for Python lists, "numpy" for NumPy arrays.
+    if len(v1) != len(v2):
+        raise ValueError("Vectors must have the same length")
+    
+    elif mode not in ['pure', 'numpy']:
+        return "invalid mode"
+    
+    else:
+        if mode == 'pure':
+            return [v1[i] + v2[i] for i in range(len(v1))]
+        
+        else:
+            v1 = np.array(v1)
+            v2 = np.array(v2)
 
-    Returns:
-    - A vector with the element-wise sum.
-    """
- 
-    pass  # Remove this line when implemented
+            sum_result = v1 + v2
+            return sum_result
+
 
 def subtract_vectors(v1, v2, mode="pure"):
-    """
-    Computes the element-wise subtraction of two vectors.
+    """Función para sumar vectores con mode='pure' para operar con python puro
+    o con mode='numpy' para operar con NumPy"""
 
-    Parameters:
-    - v1: list or np.array -> First vector.
-    - v2: list or np.array -> Second vector.
-    - mode: str -> "pure" for Python lists, "numpy" for NumPy arrays.
+    if len(v1) != len(v2):
+        raise ValueError("Vectors must have the same length")
+    
+    elif mode not in ['pure', 'numpy']:
+        return "invalid mode"
+    
+    else:
+        if mode == 'pure':
+            return [v1[i] - v2[i] for i in range(len(v1))]
+        
+        else:
+            v1 = np.array(v1)
+            v2 = np.array(v2)
 
-    Returns:
-    - A vector with the element-wise subtraction.
-    """
-
-    pass  # Remove this line when implemented
+            sub_result = v1 - v2
+            return sub_result
 
 
 sum_result_pure = sum_vectors(vector1, vector2, "pure")

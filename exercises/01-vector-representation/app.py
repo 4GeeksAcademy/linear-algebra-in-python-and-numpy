@@ -1,18 +1,11 @@
 import numpy as np  # Import NumPy to use it later
 
 def create_vector(lst, mode="pure"):
-    """
-    Converts a list into a vector in pure Python or in NumPy.
+    "Converts a list into a vector in pure Python or in NumPy."
+    if mode == "numpy":
+        return np.array(lst)
+    return list(lst)
 
-    Parameters:
-    - lst: list -> List of numbers that will form the vector.
-    - mode: str -> "pure" for normal list, "numpy" for NumPy array.
-
-    Returns:
-    - A vector in the specified format.
-    """
-    pass # Remove this line when implemented
-    
 
 # Test the function with the following values:
 vector1 = create_vector([1, 2, 3], "pure")

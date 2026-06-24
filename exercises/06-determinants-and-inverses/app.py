@@ -1,31 +1,39 @@
 import numpy as np
 
+
+matrix = [[1, 2], [3, 4]]
+
+
 def determinant(matrix, mode="pure"):
-    """
-    Computes the determinant of a square matrix.
+    "Finds a matrix determinant"
 
-    Parameters:
-    - matrix: list of lists or np.array -> Matrix to compute determinant.
-    - mode: str -> "pure" for Python lists, "numpy" for NumPy arrays.
+    if mode == 'pure':
+        return (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0])
 
-    Returns:
-    - The determinant value.
-    """
+    else:
+        matrix = np.array(matrix)
 
-    pass  # Remove this line when implemented
+        return np.linalg.det(matrix)
+
 
 def inverse_matrix(matrix, mode="pure"):
-    """
-    Computes the inverse of a square matrix.
+    "Inverse valid matrix."
 
-    Parameters:
-    - matrix: list of lists or np.array -> Matrix to compute inverse.
-    - mode: str -> "pure" for Python lists, "numpy" for NumPy arrays.
+    det = determinant(matrix)
 
-    Returns:
-    - The inverse matrix or a message if it doesn't exist.
-    """
+    if det == 0:
+        return "not invertible"
 
-    pass  # Remove this line when implemented
+    else:
+        if mode == 'pure':
+            return [[matrix[1][1] / det, -matrix[0][1] / det], [-matrix[1][0] / det, matrix[0][0] / det]]
+        
+        else:
+            matrix = np.array(matrix)
 
+            return np.linalg.inv(matrix)
 
+print(determinant(matrix, "pure"))
+print(determinant(matrix, "numpy"))
+print(inverse_matrix(matrix, "pure"))
+print(inverse_matrix(matrix, "numpy"))
